@@ -18,7 +18,7 @@ async function parseLottie(path) {
 }
 function createResolvers(args) {
     const { createResolvers, reporter } = args;
-    reporter.verbose("Creating resolvers for svg");
+    reporter.verbose("Creating resolvers for lottie");
     const resolvers = {
         File: {
             lottie: {
@@ -26,7 +26,7 @@ function createResolvers(args) {
                 async resolve(parent) {
                     const name = parent.absolutePath.toLowerCase();
                     reporter.verbose(`Looking at ${name}`);
-                    if (name.endsWith(".json")) {
+                    if (name.endsWith(".json") || name.endsWith(".lottie")) {
                         return await parseLottie(parent.absolutePath);
                     }
                     else {
