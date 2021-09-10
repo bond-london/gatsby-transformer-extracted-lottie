@@ -11,9 +11,9 @@ const lottie_to_svg_1 = __importDefault(require("lottie-to-svg"));
 async function parseLottie(path) {
     const animationJson = await fs_1.default.promises.readFile(path, "utf8");
     const animationData = JSON.parse(animationJson);
-    const svg = await lottie_to_svg_1.default(animationData, {});
-    const { data } = await svgo_1.optimize(svg, { multipass: true });
-    const encoded = mini_svg_data_uri_1.default(data);
+    const svg = await (0, lottie_to_svg_1.default)(animationData, {});
+    const { data } = await (0, svgo_1.optimize)(svg, { multipass: true });
+    const encoded = (0, mini_svg_data_uri_1.default)(data);
     return { animationJson, content: data, encoded };
 }
 function createResolvers(args) {
