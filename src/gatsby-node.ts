@@ -23,7 +23,6 @@ export function createResolvers(args: CreateResolversArgs) {
         type: "ExtractedLottie",
         async resolve(parent: FileSystemNode) {
           const name = parent.absolutePath.toLowerCase();
-          reporter.verbose(`Looking at ${name}`);
           if (name.endsWith(".json") || name.endsWith(".lottie")) {
             return await parseLottie(parent.absolutePath);
           } else {

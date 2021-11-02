@@ -1,13 +1,11 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createSchemaCustomization = exports.createResolvers = void 0;
-const fs_1 = __importDefault(require("fs"));
-const mini_svg_data_uri_1 = __importDefault(require("mini-svg-data-uri"));
+const tslib_1 = require("tslib");
+const fs_1 = (0, tslib_1.__importDefault)(require("fs"));
+const mini_svg_data_uri_1 = (0, tslib_1.__importDefault)(require("mini-svg-data-uri"));
 const svgo_1 = require("svgo");
-const lottie_to_svg_1 = __importDefault(require("lottie-to-svg"));
+const lottie_to_svg_1 = (0, tslib_1.__importDefault)(require("lottie-to-svg"));
 async function parseLottie(path) {
     const animationJson = await fs_1.default.promises.readFile(path, "utf8");
     const animationData = JSON.parse(animationJson);
@@ -25,7 +23,6 @@ function createResolvers(args) {
                 type: "ExtractedLottie",
                 async resolve(parent) {
                     const name = parent.absolutePath.toLowerCase();
-                    reporter.verbose(`Looking at ${name}`);
                     if (name.endsWith(".json") || name.endsWith(".lottie")) {
                         return await parseLottie(parent.absolutePath);
                     }
