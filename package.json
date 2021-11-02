@@ -11,15 +11,16 @@
     "@types/svgo": "^2.6.0",
     "gatsby": "^4.1.0",
     "gatsby-source-filesystem": "^4.1.0",
-    "mini-svg-data-uri": "^1.4.3",
-    "svgo": "^2.8.0",
     "typescript": "^4.4.4"
   },
   "dependencies": {
-    "lottie-to-svg": "^1.0.0"
+    "lottie-to-svg": "^1.0.0",
+    "mini-svg-data-uri": "^1.4.3",
+    "svgo": "^2.8.0"
   },
   "peerDependencies": {
-    "gatsby": "^3.0.0||^4.0.0"
+    "gatsby": "^3.0.0||^4.0.0",
+    "gatsby-source-filesystem": "^3||^4"
   },
   "keywords": [
     "gatsby",
