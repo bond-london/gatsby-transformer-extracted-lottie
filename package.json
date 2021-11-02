@@ -1,10 +1,10 @@
 {
   "name": "@bond-london/gatsby-transformer-extracted-lottie",
   "author": "Nick Randell <nick@nickrandell.com>",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "main": "index.js",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "@types/node": "^16.11.6",
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
@@ -13,7 +13,8 @@
     "gatsby-source-filesystem": "^4.1.0",
     "lottie-to-svg": "^1.0.0",
     "mini-svg-data-uri": "^1.4.3",
-    "svgo": "^2.8.0"
+    "svgo": "^2.8.0",
+    "typescript": "^4.4.4"
   },
   "peerDependencies": {
     "gatsby": "^3.0.0||^4.0.0"
@@ -27,8 +28,5 @@
   ],
   "scripts": {
     "build": "tsc -p ."
-  },
-  "devDependencies": {
-    "typescript": "^4.4.4"
   }
 }
