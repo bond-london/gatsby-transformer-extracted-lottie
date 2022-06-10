@@ -1,16 +1,21 @@
 {
   "compilerOptions": {
-    "forceConsistentCasingInFileNames": true,
-    "importHelpers": true,
-    "removeComments": true,
-    "target": "ES2018",
-    "module": "CommonJS",
-    "lib": ["dom", "ES2017"],
-    "sourceMap": true,
-    "outDir": ".",
+    "target": "es5",
+    "lib": ["dom", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "strict": true,
-    "esModuleInterop": true
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "isolatedModules": false,
+    "jsx": "react",
+    "importHelpers": true,
+    "removeComments": false,
+    "declaration": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "include": ["src"]
 }
