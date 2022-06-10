@@ -1,5 +1,13 @@
 
 
+## [3.0.4](https://github.com/bond-london/gatsby-transformer-extracted-lottie/compare/v3.0.1...v3.0.4) (2022-06-10)
+
+
+### Bug Fixes
+
+* ignore dist ([22c9d8c](https://github.com/bond-london/gatsby-transformer-extracted-lottie/commit/22c9d8c0b4f437204a44c8620e8245b20c22ace4))
+* reduce logging ([54ad868](https://github.com/bond-london/gatsby-transformer-extracted-lottie/commit/54ad86885d0999de9d35bfc5200412b91418d297))
+
 ## [3.0.1](https://github.com/bond-london/gatsby-transformer-extracted-lottie/compare/v2.0.3...v3.0.1) (2022-06-10)
 
 
