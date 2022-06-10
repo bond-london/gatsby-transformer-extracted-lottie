@@ -1,1 +1,0 @@
-{"version":3,"file":"createSchemaCustomization.js","sourceRoot":"","sources":["../src/createSchemaCustomization.ts"],"names":[],"mappings":";;;AAEA,SAAgB,yBAAyB,CAAC,IAAmC;IAEzE,IAAA,QAAQ,GAEN,IAAI,SAFE,EACG,WAAW,GACpB,IAAI,oBADgB,CACf;IACT,QAAQ,CAAC,OAAO,CAAC,6BAA6B,CAAC,CAAC;IAChD,IAAM,QAAQ,GAAG,+GAKhB,CAAC;IAEF,WAAW,CAAC,QAAQ,CAAC,CAAC;AACxB,CAAC;AAdD,8DAcC"}
