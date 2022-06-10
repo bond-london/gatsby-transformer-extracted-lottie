@@ -39,20 +39,12 @@ export async function onCreateNode(args: CreateNodeArgs) {
     createNodeId,
     actions: { createNode, createParentChildLink },
     getCache,
-    reporter,
     createContentDigest,
   } = args;
 
   if (node.internal.type !== "File") return;
   const fsNode = node as FileSystemNode;
-  reporter.info(
-    `Looking at node ${fsNode.absolutePath} ${
-      fsNode.internal.mediaType || "??"
-    }`
-  );
   if (fsNode.internal.mediaType !== "application/json") return;
-
-  reporter.info(`Processing node ${fsNode.absolutePath}`);
 
   const parsed = await parseLottie(fsNode, args);
   if (parsed) {
