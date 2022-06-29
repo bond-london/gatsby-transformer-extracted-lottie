@@ -1,5 +1,12 @@
 
 
+## [3.0.5](https://github.com/bond-london/gatsby-transformer-extracted-lottie/compare/v3.0.4...v3.0.5) (2022-06-29)
+
+
+### Bug Fixes
+
+* allow silent failures for non lottie files ([ff79e1d](https://github.com/bond-london/gatsby-transformer-extracted-lottie/commit/ff79e1db240a9df3415edddc4b8301c78e1880f8))
+
 ## [3.0.4](https://github.com/bond-london/gatsby-transformer-extracted-lottie/compare/v3.0.1...v3.0.4) (2022-06-10)
 
 
