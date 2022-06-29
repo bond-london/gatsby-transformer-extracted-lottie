@@ -46,41 +46,45 @@ export async function onCreateNode(args: CreateNodeArgs) {
   const fsNode = node as FileSystemNode;
   if (fsNode.internal.mediaType !== "application/json") return;
 
-  const parsed = await parseLottie(fsNode, args);
-  if (parsed) {
-    const { result } = parsed;
-    const {
-      data,
-      info: { width, height },
-    } = result;
+  try {
+    const parsed = await parseLottie(fsNode, args);
+    if (parsed) {
+      const { result } = parsed;
+      const {
+        data,
+        info: { width, height },
+      } = result;
 
-    const lottieNode: LottieNode = {
-      id: `${node.id} >>> Lottie`,
-      parent: node.id,
-      width,
-      height,
-    };
-    if (data.length < 2048) {
-      lottieNode.encoded = svgToTinyDataUri(data);
-    } else {
-      const previewNode = await createFileNodeFromBuffer({
-        buffer: Buffer.from(data),
-        createNode,
-        createNodeId,
-        getCache,
-        name: `${fsNode.name}-preview`,
-        ext: ".svg",
-      });
-      lottieNode.encodedFile = previewNode.id;
+      const lottieNode: LottieNode = {
+        id: `${node.id} >>> Lottie`,
+        parent: node.id,
+        width,
+        height,
+      };
+      if (data.length < 2048) {
+        lottieNode.encoded = svgToTinyDataUri(data);
+      } else {
+        const previewNode = await createFileNodeFromBuffer({
+          buffer: Buffer.from(data),
+          createNode,
+          createNodeId,
+          getCache,
+          name: `${fsNode.name}-preview`,
+          ext: ".svg",
+        });
+        lottieNode.encodedFile = previewNode.id;
+      }
+      const lottieNodeInput: NodeInput = {
+        ...lottieNode,
+        internal: {
+          type: "ExtractedLottie",
+          contentDigest: createContentDigest(lottieNode),
+        },
+      };
+      await createNode(lottieNodeInput);
+      createParentChildLink({ parent: node, child: lottieNodeInput });
     }
-    const lottieNodeInput: NodeInput = {
-      ...lottieNode,
-      internal: {
-        type: "ExtractedLottie",
-        contentDigest: createContentDigest(lottieNode),
-      },
-    };
-    await createNode(lottieNodeInput);
-    createParentChildLink({ parent: node, child: lottieNodeInput });
+  } catch {
+    // If we can't get lottie, doesn't matter!
   }
 }
