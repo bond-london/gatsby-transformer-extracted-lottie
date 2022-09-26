@@ -1,3 +1,5 @@
+Merged with https://github.com/bond-london/bond-theme-development
+
 # gatsby-transformer-extracted-lottie
 
 Transform lottie files producing a preview svg either inline or as a file
